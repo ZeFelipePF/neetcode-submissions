@@ -1,0 +1,16 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        memo = {}
+
+        def helper(k: int) -> int:
+            if k <= 2:
+                return k
+            if k not in memo:
+                memo[k] = helper(k - 1) + helper(k - 2)
+            return memo[k]
+
+        return helper(n)
+
+        
+
+         
